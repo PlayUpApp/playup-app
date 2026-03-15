@@ -1,146 +1,116 @@
-# PlayUp: Tu Cancha de Encuentros Deportivos ⚽🏀🏐
+# PlayUp: Your Sports Matchmaking Hub ⚽🏀🏐
 
-¡Bienvenido al repositorio oficial de **PlayUp**! Esta es una aplicación móvil multiplataforma diseñada para transformar la cultura del deporte amateur, permitiendo a los usuarios conectar, organizar y jugar partidos de forma eficiente y profesional.
+Welcome to the official **PlayUp** repository! This is a cross-platform mobile application designed to transform amateur sports culture, allowing users to connect, organize, and play matches efficiently and professionally.
 
----
-
-## 🚀 Visión General
-**PlayUp** es una solución integral desarrollada con **Expo (React Native)** y **Firebase**. Nuestra plataforma resuelve problemas críticos como la falta de jugadores, la desorganización logística y la dificultad para encontrar rivales en entornos urbanos y periurbanos.
-
-La arquitectura actual está centrada en fútbol, pero está diseñada para ser escalable hacia múltiples disciplinas como vóley y básquet, integrando una comunidad activa mediante perfiles y mensajería social.
+> **🚧 DEVELOPMENT STATUS: EARLY STAGE / ACTIVE ARCHITECTURE**
+> *This project is currently in its initial development phase. The core architecture (Expo Router + TypeScript) and secure authentication flow (Firebase Auth) have been successfully established. We are currently planning the scalable database schema before resuming active feature sprints.*
 
 ---
 
-## ✨ Identidad y Valor de Marca
-Nos regimos por lineamientos de marca estrictos para garantizar una experiencia de usuario coherente y confiable:
+## 🚀 Overview
+**PlayUp** is a comprehensive solution developed with **Expo (React Native)** and **Firebase**. Our platform solves critical issues such as player shortages, logistical disorganization, and the difficulty of finding opponents in urban and peri-urban environments.
 
-* **Misión**: Facilitar la organización de encuentros deportivos conectando personas y equipos para que puedan jugar sin depender de tener el grupo completo.
-* **Público Objetivo**: Personas activas de 16 a 40 años en zonas urbanas y periurbanas.
-* **Valores**: Conexión, Accesibilidad, Confianza, Activación e Inclusión.
-* **Personalidad**: Un equilibrio entre lo social y cercano (arquetipo de "El Amigo") y lo profesional y estructurado (arquetipo de "El Organizador").
-* **Voz y Tono**: Tono formal, claro, directo, respetuoso, motivador y profesional.
+The current architecture is centered around football (soccer), but it is designed to be highly scalable to multiple disciplines like volleyball and basketball, integrating an active community through user profiles and social messaging.
 
 ---
 
-## 🛠️ Stack Tecnológico y Diseño
+## ✨ Brand Identity and Value
+We adhere to strict brand guidelines to ensure a consistent and reliable user experience:
 
-* **Framework:** Expo (React Native) con Expo Router (File-based routing).
-* **Lenguaje:** TypeScript.
+* **Mission**: Facilitate the organization of sports events by connecting people and teams so they can play without depending on a full roster.
+* **Target Audience**: Active individuals aged 16 to 40 in urban areas.
+* **Values**: Connection, Accessibility, Trust, Activation, and Inclusion.
+* **Voice and Tone**: Formal, clear, direct, respectful, motivating, and professional.
+
+---
+
+## 🛠️ Tech Stack & Design
+
+* **Framework:** Expo (React Native) with Expo Router (File-based routing).
+* **Language:** TypeScript.
 * **Backend & Auth:** Firebase (Firebase Auth v10+).
 
-### 🎨 Diseño y Estética Visual
-Todos los componentes deben respetar los siguientes lineamientos visuales:
-
-* **Tipografía de Impacto (Poppins):** Utilizada para títulos y jerarquías altas.
-* **Tipografía de Lectura (Inter):** Aplicada en cuerpos de texto y descripciones.
-* **Identidad Cromática**: 
-    * **Primarios**: Violetas y azules eléctricos (#170055, #3E00FF, #AE00FB).
-    * **Secundarios**: Tonos cian y pasteles para detalles (#7900FF, #548CFF, #93FFD8, #CFFFDC).
-
-> **💡 TIP DE RECURSOS:** El proyecto ya incluye las fuentes oficiales (**Poppins** e **Inter**) en las dependencias. Al ejecutar `npm install`, se sincronizarán automáticamente en tu entorno local.
+### 🎨 Visual Design
+All components adhere to the following visual guidelines:
+* **Impact Typography (Poppins):** Used for titles and high-level hierarchy.
+* **Reading Typography (Inter):** Applied to body text and descriptions.
+* **Color Palette**: 
+    * **Primary**: Violets and electric blues (#170055, #3E00FF, #AE00FB).
+    * **Secondary**: Cyan and pastel tones for details (#7900FF, #548CFF, #93FFD8, #CFFFDC).
 
 ---
 
-## 🔥 Autenticación y Firebase
-Actualmente, el módulo de **Firebase Auth** se encuentra implementado y funcional.
+## 🔥 Authentication & Firebase
+Currently, the **Firebase Auth** module is fully implemented and functional.
 
-### Flujos de Usuario Disponibles:
-1.  **Registro:** Creación de nuevas cuentas mediante correo y contraseña.
-2.  **Login:** Acceso seguro con validación de credenciales.
-3.  **Recuperación de Contraseña:** Flujo automatizado donde el sistema envía un correo de restablecimiento real a la dirección del usuario.
+### Available User Flows:
+1.  **Registration:** New account creation via email and password.
+2.  **Login:** Secure access with credential validation.
+3.  **Password Recovery:** Automated flow where the system sends a real reset email to the user.
 
-> **📌 NOTA SOBRE PERSISTENCIA DE SESIÓN**
-> La aplicación gestiona la persistencia de la sesión de forma nativa a través del SDK de Firebase, asegurando que el estado del usuario se mantenga activo entre reinicios de la app.
-
-> **⚠️ PROYECTO FIREBASE COMPARTIDO (IMPORTANTE)**
-> Como equipo de desarrollo, utilizamos un único proyecto centralizado en Firebase. **No modifiques** la configuración en `config/firebase.ts` ni crees proyectos individuales para este repositorio. Solicita las credenciales del archivo `.env` al administrador para asegurar que todos trabajemos sobre la misma base de datos y autenticación.
+> **📌 SESSION PERSISTENCE NOTE**
+> The app manages session persistence natively through the Firebase SDK, ensuring the user state remains active across app restarts.
 
 ---
 
-## 📂 Estructura del Proyecto
-La organización actual del repositorio es la siguiente:
+## 📂 Project Structure
 
-| Directorio / Archivo | Función |
+| Directory / File | Function |
 | :--- | :--- |
-| `app/` | Contiene las pantallas y la lógica de navegación (File-based routing). |
-| `assets/images/` | Almacena los recursos gráficos y visuales de la marca. |
-| `components/` | Componentes de UI reutilizables. |
-| `config/` | Configuración técnica de servicios externos. |
-| `constants/` | Valores constantes como colores corporativos y configuraciones globales. |
-| `hooks/` | Hooks personalizados de React para lógica compartida. |
-| `scripts/` | Scripts de utilidad para el desarrollo. |
-| `.vscode/` | Configuración del entorno de trabajo para el editor. |
-| `eslint.config.js` | Configuración de reglas de calidad y estilo de código. |
-| `tsconfig.json` | Configuración del motor de TypeScript. |
+| `app/` | Contains screens and navigation logic (File-based routing). |
+| `assets/images/` | Stores graphic and visual brand assets. |
+| `components/` | Reusable UI components. |
+| `config/` | Technical configuration for external services. |
+| `constants/` | Constant values such as corporate colors and global configs. |
+| `hooks/` | Custom React hooks for shared logic. |
+| `scripts/` | Utility scripts for development. |
+| `eslint.config.js` | Code quality and styling rules configuration. |
+| `tsconfig.json` | TypeScript engine configuration. |
 
 ---
 
-## 📝 Guía de Inicio
+## 📝 Getting Started
 
-### 1. Requisitos Previos
-Si aún no tienes configurado tu entorno de desarrollo, asegúrate de instalar:
-* [Node.js](https://nodejs.org/) (Versión LTS recomendada).
-* **npm** (Viene incluido con Node.js) o **yarn**.
-* **Expo Go** instalado en tu dispositivo móvil o un emulador configurado.
+### 1. Prerequisites
+* [Node.js](https://nodejs.org/) (LTS version recommended).
+* **npm** or **yarn**.
+* **Expo Go** installed on your mobile device or a configured emulator.
 
-### 2. Instalación y Configuración local
-Clona el repositorio e instala las dependencias:
+### 2. Local Installation
+Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/PlayUpApp/playup-app.git
+git clone [https://github.com/PlayUpApp/playup-app.git](https://github.com/PlayUpApp/playup-app.git)
 cd playup-app
 npm install
 ```
 
-### 3. Configuración de Firebase y Variables de Entorno
-Para que la autenticación funcione, debes crear un archivo .env en la raíz del proyecto. Crea un proyecto en Firebase Console y copia los siguientes valores:
+### 3. Environment Variables
+To enable authentication, create a `.env` file in the root of the project with your Firebase credentials:
 
 ```env
-EXPO_PUBLIC_FIREBASE_API_KEY=tu_api_key
-EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN=tu_auth_domain
-EXPO_PUBLIC_FIREBASE_PROJECT_ID=tu_project_id
-EXPO_PUBLIC_FIREBASE_STORAGE_BUCKET=tu_storage_bucket
-EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=tu_sender_id
-EXPO_PUBLIC_FIREBASE_APP_ID=tu_app_id
+EXPO_PUBLIC_FIREBASE_API_KEY=your_api_key
+EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN=your_auth_domain
+EXPO_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+EXPO_PUBLIC_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+EXPO_PUBLIC_FIREBASE_APP_ID=your_app_id
 ```
 
-> **Nota:** El archivo `config/firebase.ts` ya está preparado para leer estas variables.
-
-### 4. Ejecución
-Inicia el servidor de desarrollo de Expo con el siguiente comando:
+### 4. Run the App
+Start the Expo development server:
 
 ```bash
 npx expo start
 ```
 
-### 5. Prueba de la App
-Para visualizar y probar los cambios en tiempo real, utiliza la app **Expo Go** en tu dispositivo físico o un emulador/simulador configurado:
-
-* **Dispositivo Físico:** Escanea el código QR que aparece en la terminal al iniciar el servidor con la cámara de tu celular (iOS) o desde la app **Expo Go** (Android).
-* **Emuladores:**
-    * Presiona **a** para abrir el emulador de Android.
-    * Presiona **i** para abrir el simulador de iOS.
-
 ---
 
-## 🤝 Flujo de Contribución
-¡Agradecemos tu colaboración en PlayUp! Para mantener la calidad y escalabilidad del código, sigue este estándar:
+## 🤝 Contributing Flow
+To maintain code quality and scalability, please follow this standard:
 
-1. **Fork y Ramas:** Haz un **Fork** del proyecto y crea una nueva rama descriptiva:
-   * `git checkout -b feat/nombre-funcionalidad`
-   * `git checkout -b fix/descripcion-error`
-2. **Commits Semánticos:** Utiliza prefijos para identificar el tipo de cambio:
-   * `feat:` para nuevas funcionalidades.
-   * `fix:` para corrección de errores.
-   * `docs:` cambios en documentación.
-   * `style:` cambios de diseño que no afectan la lógica.
-3. **Lineamientos de Diseño:** Desarrolla siguiendo el **Manual de Marca** (uso de tipografías y colores corporativos). Es obligatorio respetar el **área de protección** y los usos correctos del logotipo en la interfaz.
-4. **Pull Request:** Envía un **Pull Request** detallando tus cambios y adjunta capturas si hubo modificaciones en la UI. Asegúrate de que el código no rompa la navegación de **Expo Router**.
+1. **Fork & Branch:** Create a descriptive branch (`feat/feature-name` or `fix/bug-description`).
+2. **Semantic Commits:** Use prefixes (`feat:`, `fix:`, `docs:`, `style:`).
+3. **Pull Request:** Submit a PR detailing your changes and attach UI screenshots if applicable.
 
 ---
-
-## ⚠️ Nota para Colaboradores
-Si deseas comenzar con una estructura limpia o mover el código de ejemplo que se incluye por defecto en Expo, puedes ejecutar el siguiente comando en tu terminal:
-
-```bash
-npm run reset-project
